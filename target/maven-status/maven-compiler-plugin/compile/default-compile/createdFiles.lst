@@ -1,0 +1,6 @@
+com\persistencia\fiap\entities\Appointment.class
+com\persistencia\fiap\config\TestConfig.class
+com\persistencia\fiap\App.class
+com\persistencia\fiap\controller\AppointmentController.class
+com\persistencia\fiap\config\WebConfig.class
+com\persistencia\fiap\repositories\AppointmentRepository.class

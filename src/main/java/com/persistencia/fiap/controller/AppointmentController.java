@@ -1,23 +1,27 @@
 package com.persistencia.fiap.controller;
 
-import java.util.List;
-
-import com.persistencia.fiap.entities.Apointment;
-import com.persistencia.fiap.repositories.ApointmentRepository;
+import com.persistencia.fiap.entities.Appointment;
+import com.persistencia.fiap.repositories.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(value = "/apointments")
-public class ApointmentControler {
+@RequestMapping(value = "/appointments")
+public class AppointmentController {
 
     @Autowired
-    ApointmentRepository repository;
+    AppointmentRepository repository;
 
     @PostMapping
-    public void addApointment(@RequestBody Apointment apointment){
-        repository.save(apointment);
-        System.out.println(apointment.getHorario());
+    public Appointment addAppointment(@RequestBody Appointment appointment){
+        return repository.save(appointment);
+    }
+
+    @GetMapping
+    public List<Appointment> getAllAppointments(){
+        return repository.findAll();
     }
 
 }

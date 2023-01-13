@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-agendamento-deployment
+  labels:
+    app: api-agendamento
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-agendamento
+  template:
+    metadata:
+      labels:
+        app: api-agendamento
+    spec:
+      containers:
+        - name: api-agendamento
+          image: barbearia-agendamento:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8060
+          env:
+            - name: POSTGRES_SERVICE
+              value: postgres-service
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: postgres-password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-agendamento-service
+spec:
+  type: NodePort
+  selector:
+    app: api-agendamento
+  ports:
+    - protocol: TCP
+      port: 8060
+      targetPort: 8060

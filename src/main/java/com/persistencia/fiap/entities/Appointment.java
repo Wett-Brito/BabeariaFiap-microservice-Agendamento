@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="unities")
-public class Apointment implements Serializable {
+@Table(name="appointment")
+public class Appointment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="unity_id")
+	@Column(name="appointment_id")
     private Long id;
 
     private Long idProduct;
@@ -33,7 +33,7 @@ public class Apointment implements Serializable {
 
 	private Integer horario;
 
-	public Apointment(Long id, Long idProduct, Long idUnity, String data, Integer horario) {
+	public Appointment(Long id, Long idProduct, Long idUnity, String data, Integer horario) {
 		super();
 		this.id = id;
 		this.idProduct = idProduct;
