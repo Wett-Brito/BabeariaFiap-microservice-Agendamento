@@ -10,10 +10,10 @@ Esse repositório faz parte do projeto de Barbearia usando Angular + Node como f
 ## Microserviços
 Primeiro clonamos os seguintes projetos:
 
-https://github.com/Wett-Brito/BabeariaFiap-microservice-Agendamento
-https://github.com/Wett-Brito/BabeariaFiap-microservice-unidade
-https://github.com/Wett-Brito/BabeariaFiap-microservice-servico
-https://github.com/Wett-Brito/BarbeariaFiapFront
+* https://github.com/Wett-Brito/BabeariaFiap-microservice-Agendamento
+* https://github.com/Wett-Brito/BabeariaFiap-microservice-unidade
+* https://github.com/Wett-Brito/BabeariaFiap-microservice-servico
+* https://github.com/Wett-Brito/BarbeariaFiapFront
 
 ## Minikube
 É necessário criar uma instância / container do Minikube
